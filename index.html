@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Uncle James</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #000000, #1a1a1a);
+            color: gold;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* ✅ allow scrolling */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 40px;
+            text-shadow: 0 0 20px gold, 0 0 40px orange;
+        }
+
+        .photo-frame {
+            margin: 30px auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid gold;
+            overflow: hidden;
+            box-shadow: 0 0 30px gold, 0 0 60px orange;
+            animation: glow 3s infinite alternate;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px gold;
+            }
+
+            to {
+                box-shadow: 0 0 40px orange;
+            }
+        }
+
+        .poem {
+            width: 85%;
+            margin: 40px auto;
+            font-size: 1.3em;
+            line-height: 1.8em;
+            background: rgba(255, 215, 0, 0.08);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            max-height: none;
+            /* ✅ show full height */
+            overflow: visible;
+            /* ✅ don’t cut text */
+            white-space: normal;
+            /* ✅ wrap long text */
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            font-size: 1em;
+            color: #ccc;
+        }
+
+        /* Balloons */
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 60px;
+            height: 80px;
+            background-color: red;
+            border-radius: 50% 50% 50% 50%;
+            opacity: 0.8;
+            animation: floatUp 10s linear infinite;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            top: 80px;
+            left: 28px;
+            width: 4px;
+            height: 50px;
+            background: white;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(10deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Happy Birthday Uncle James 🎉</h1>
+
+    <div class="photo-frame">
+        <img src="james.jpg" alt="Uncle James">
+    </div>
+
+    <div class="poem">
+        <p><strong>A Man Called James</strong></p>
+        <p>
+            In a world of many faces, one shines so bright,<br>
+            A heart so selfless, a soul full of light.<br>
+            Strength in his hands, but kindness his art,<br>
+            Uncle, you are loved, carved deep in my heart.
+        </p>
+        <p>
+            Through trials and storms, you stand as a guide,<br>
+            With wisdom and faith, you walk by my side.<br>
+            Today I give thanks, for the man that you are,<br>
+            my hero, my blessing, my brightest star.
+        </p>
+        <p>
+            So here’s to your journey, to the years yet to come,<br>
+            May your days be filled with peace, joy, and sun.<br>
+            Today I proudly say,<br>
+            I love you, and I honor you <strong>Happy Birthday Sir🎉🤗!</strong>
+        </p>
+    </div>
+
+    <footer>With love from Ken, your family 💙</footer>
+
+    <!-- Balloon Script -->
+    <script>
+        function randomColor() {
+            const colors = ["red", "blue", "green", "purple", "orange", "gold", "pink"];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        for (let i = 0; i < 25; i++) {
+            const balloon = document.createElement("div");
+            balloon.className = "balloon";
+            balloon.style.left = Math.random() * window.innerWidth + "px";
+            balloon.style.backgroundColor = randomColor();
+            balloon.style.animationDuration = (6 + Math.random() * 5) + "s";
+            document.body.appendChild(balloon);
+        }
+    </script>
+</body>
+
+</html>
