@@ -1,163 +1,134 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Uncle James</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            font-family: 'Georgia', serif;
-            background: linear-gradient(to bottom, #000000, #1a1a1a);
-            color: gold;
-            overflow-x: hidden;
-            overflow-y: auto;
-            /* ✅ allow scrolling */
-        }
+  <meta charset="UTF-8">
+  <title>Happy Birthday Uncle James 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
 
-        h1 {
-            font-size: 3em;
-            margin-top: 40px;
-            text-shadow: 0 0 20px gold, 0 0 40px orange;
-        }
+    h1 {
+      font-size: 3em;
+      margin-top: 50px;
+      animation: fadeIn 3s ease-in-out;
+    }
 
-        .photo-frame {
-            margin: 30px auto;
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 5px solid gold;
-            overflow: hidden;
-            box-shadow: 0 0 30px gold, 0 0 60px orange;
-            animation: glow 3s infinite alternate;
-        }
+    p {
+      font-size: 1.1em;
+      width: 85%;
+      margin: 20px auto;
+      line-height: 1.6;
+      animation: fadeIn 4s ease-in-out;
+      white-space: pre-line;
+    }
 
-        .photo-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;
+      animation: floatUp 10s infinite ease-in;
+    }
 
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 20px gold;
-            }
+    .balloon::before {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: white;
+    }
 
-            to {
-                box-shadow: 0 0 40px orange;
-            }
-        }
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
 
-        .poem {
-            width: 85%;
-            margin: 40px auto;
-            font-size: 1.3em;
-            line-height: 1.8em;
-            background: rgba(255, 215, 0, 0.08);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
-            max-height: none;
-            /* ✅ show full height */
-            overflow: visible;
-            /* ✅ don’t cut text */
-            white-space: normal;
-            /* ✅ wrap long text */
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        footer {
-            margin-top: 40px;
-            padding: 15px;
-            font-size: 1em;
-            color: #ccc;
-        }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 25px;
+      font-size: 1em;
+      color: white;
+      background: #0078d7; /* nice blue */
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(0, 120, 215, 0.7);
+      animation: pulse 1.5s infinite;
+    }
 
-        /* Balloons */
-        .balloon {
-            position: absolute;
-            bottom: -150px;
-            width: 60px;
-            height: 80px;
-            background-color: red;
-            border-radius: 50% 50% 50% 50%;
-            opacity: 0.8;
-            animation: floatUp 10s linear infinite;
-        }
+    .btn:hover {
+      background: #005a9e;
+    }
 
-        .balloon::after {
-            content: "";
-            position: absolute;
-            top: 80px;
-            left: 28px;
-            width: 4px;
-            height: 50px;
-            background: white;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-120vh) rotate(10deg);
-                opacity: 0;
-            }
-        }
-    </style>
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px rgba(168, 215, 0, 0.6); }
+      50% { box-shadow: 0 0 25px rgba(0,120,215,1); }
+      100% { box-shadow: 0 0 10px rgba(0,120,215,0.6); }
+    }
+  </style>
 </head>
-
 <body>
-    <h1>Happy Birthday Uncle James 🎉</h1>
+  <h1>Happy Birthday Uncle James🎉</h1>
+  <p>
+Happy Birthday, Uncle! 
 
-    <div class="photo-frame">
-        <img src="james.jpg" alt="Uncle James">
-    </div>
+As it is written in Genesis 27:27–28:
+“Surely, the smell of my son is like the smell of a field which the Lord has blessed. Therefore may God give you of the dew of heaven, of the fatness of the earth, and plenty of grain and wine.”
 
-    <div class="poem">
-        <p><strong>A Man Called James</strong></p>
-        <p>
-            In a world of many faces, one shines so bright,<br>
-            A heart so selfless, a soul full of light.<br>
-            Strength in his hands, but kindness his art,<br>
-            Uncle, you are loved, carved deep in my heart.
-        </p>
-        <p>
-            Through trials and storms, you stand as a guide,<br>
-            With wisdom and faith, you walk by my side.<br>
-            Today I give thanks, for the man that you are,<br>
-            my hero, my blessing, my brightest star.
-        </p>
-        <p>
-            So here’s to your journey, to the years yet to come,<br>
-            May your days be filled with peace, joy, and sun.<br>
-            Today I proudly say,<br>
-            I love you, and I honor you <strong>Happy Birthday Sir🎉🤗!</strong>
-        </p>
-    </div>
+Today, I pray that the Lord will refresh your life like the dew of heaven, bless your work like the fatness of the earth, and keep your home filled with abundance and joy.
 
-    <footer>With love from Ken, your family 💙</footer>
+Though you are sometimes strong-willed and hold things close, your love, unity, and care shine brighter than all. May you continue to be a pillar of strength and a bond of togetherness in the family.
 
-    <!-- Balloon Script -->
-    <script>
-        function randomColor() {
-            const colors = ["red", "blue", "green", "purple", "orange", "gold", "pink"];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
+As Psalm 133:1 reminds us: “How good and pleasant it is when brothers live together in unity!” May your days be full of peace, love, and togetherness.
 
-        for (let i = 0; i < 25; i++) {
-            const balloon = document.createElement("div");
-            balloon.className = "balloon";
-            balloon.style.left = Math.random() * window.innerWidth + "px";
-            balloon.style.backgroundColor = randomColor();
-            balloon.style.animationDuration = (6 + Math.random() * 5) + "s";
-            document.body.appendChild(balloon);
-        }
-    </script>
+Finally, may Numbers 6:24–26 rest upon you always:
+“The Lord bless you and keep you; the Lord make His face shine on you and be gracious to you; the Lord turn His face toward you and give you peace.”
+
+Happy Birthday once again, my dearest uncle. 
+May this year bring you divine blessings and more reasons to smile.
+  </p>
+
+  <a class="btn" 
+     href="mailto:jamesadosibe243@gmail.com?subject=Happy%20Birthday%20Uncle%20James!&body=Happy%20Birthday,%20Uncle!%0A%0AAs%20it%20is%20written%20in%20Genesis%2027:27%E2%80%9328:%0A%E2%80%9CSurely,%20the%20smell%20of%20my%20son%20is%20like%20the%20smell%20of%20a%20field%20which%20the%20Lord%20has%20blessed.%20Therefore%20may%20God%20give%20you%20of%20the%20dew%20of%20heaven,%20of%20the%20fatness%20of%20the%20earth,%20and%20plenty%20of%20grain%20and%20wine.%E2%80%9D%0A%0AToday,%20I%20pray%20that%20the%20Lord%20will%20refresh%20your%20life%20like%20the%20dew%20of%20heaven,%20bless%20your%20work%20like%20the%20fatness%20of%20the%20earth,%20and%20keep%20your%20home%20filled%20with%20abundance%20and%20joy.%0A%0AThough%20you%20are%20sometimes%20strong-willed%20and%20hold%20things%20close,%20your%20love,%20unity,%20and%20care%20shine%20brighter%20than%20all.%20May%20you%20continue%20to%20be%20a%20pillar%20of%20strength%20and%20a%20bond%20of%20togetherness%20in%20the%20family.%0A%0AAs%20Psalm%20133:1%20reminds%20us:%20%E2%80%9CHow%20good%20and%20pleasant%20it%20is%20when%20brothers%20live%20together%20in%20unity!%E2%80%9D%20May%20your%20days%20be%20full%20of%20peace,%20love,%20and%20togetherness.%0A%0AFinally,%20may%20Numbers%206:24%E2%80%9326%20rest%20upon%20you%20always:%0A%E2%80%9CThe%20Lord%20bless%20you%20and%20keep%20you;%20the%20Lord%20make%20His%20face%20shine%20on%20you%20and%20be%20gracious%20to%20you;%20the%20Lord%20turn%20His%20face%20toward%20you%20and%20give%20you%20peace.%E2%80%9D%0A%0AHappy%20Birthday%20once%20again,%20my%20dearest%20uncle.%20🎂🎁%20May%20this%20year%20bring%20you%20divine%20blessings%20and%20more%20reasons%20to%20smile." 
+     target="_blank">
+    📧 Send Him a Birthday Email
+  </a>
+
+  <script>
+    // Generate random balloons
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      document.body.appendChild(balloon);
+
+      const colors = ["#ff4d4d", "#4da6ff", "#66ff66", "#ffff66", "#ff99ff"];
+      balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+      setTimeout(() => balloon.remove(), 11000);
+    }
+
+    setInterval(createBalloon, 800);
+  </script>
 </body>
-
 </html>
